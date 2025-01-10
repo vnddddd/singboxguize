@@ -91,7 +91,6 @@
         "auto_detect_interface": true,
         "final": "🐠 漏网之鱼",
     "rules": [
-      { "source_ip_cidr": ["192.168.0.0/16"], "outbound": "bypass" },
       { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连" },
       { "domain_suffix": ["razord.top", "metacubex.one", "haishan.me", "metacubex.one","linux.do"], "outbound": "🎯 全球直连" },
@@ -112,7 +111,8 @@
         "192.168.10.151/32",
         "192.168.10.174/32",
         "192.168.10.172/32"
-      ], "outbound": "🚀 节点选择" }
+      ], "outbound": "🚀 节点选择" },
+      { "source_ip_cidr": ["192.168.0.0/16"], "outbound": "🎯 全球直连" }
     ],
     
     "rule_set": [

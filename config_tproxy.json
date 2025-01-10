@@ -45,8 +45,24 @@
     {
       "type": "tproxy",
       "tag": "tproxy-in",
-      "listen": "0.0.0.0",
+      "listen": "192.168.10.151",
       "listen_port": 7895,
+      "sniff": true,
+      "sniff_override_destination": false
+    },
+    {
+      "type": "tproxy",
+      "tag": "tproxy-in1",
+      "listen": "192.168.10.174",
+      "listen_port": 7896,
+      "sniff": true,
+      "sniff_override_destination": false
+    },
+    {
+      "type": "tproxy",
+      "tag": "tproxy-in2",
+      "listen": "192.168.10.172",
+      "listen_port": 7897,
       "sniff": true,
       "sniff_override_destination": false
     },
@@ -88,9 +104,6 @@
         "final": "🐠 漏网之鱼",
     "rules": [
       { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
-      { "source_ip_cidr": "192.168.10.151/32", "outbound": "🚀 节点选择" },
-      { "source_ip_cidr": "192.168.10.174/32", "outbound": "🚀 节点选择" },
-      { "source_ip_cidr": "192.168.10.172/32", "outbound": "🚀 节点选择" },
       { "clash_mode": "direct", "outbound": "🎯 全球直连" },
       { "clash_mode": "global", "outbound": "GLOBAL" },
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连" },

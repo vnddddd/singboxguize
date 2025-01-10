@@ -46,11 +46,6 @@
       "auto_route": true,
       "sniff": true,
       "stack": "system",
-      "route_address": [
-        "192.168.10.151/32",
-        "192.168.10.174/32",
-        "192.168.10.172/32"
-      ],
       "platform": {
         "http_proxy": {
           "enabled": true,

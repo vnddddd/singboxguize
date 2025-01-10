@@ -51,22 +51,6 @@
       "sniff_override_destination": false
     },
     {
-      "type": "tproxy",
-      "tag": "tproxy-in1",
-      "listen": "192.168.10.174",
-      "listen_port": 7896,
-      "sniff": true,
-      "sniff_override_destination": false
-    },
-    {
-      "type": "tproxy",
-      "tag": "tproxy-in2",
-      "listen": "192.168.10.172",
-      "listen_port": 7897,
-      "sniff": true,
-      "sniff_override_destination": false
-    },
-    {
       "type": "mixed",
       "listen": "127.0.0.1",
       "listen_port": 2080,

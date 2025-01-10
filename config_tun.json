@@ -52,7 +52,17 @@
           "server": "127.0.0.1",
           "server_port": 2080
         }
-      }
+      },
+      "route_address": [
+        "192.168.10.151/32",
+        "192.168.10.174/32",
+        "192.168.10.172/32"
+      ],
+      "route_exclude_address": [
+        "10.0.0.0/8",      
+        "172.16.0.0/12",   
+        "192.168.0.0/16" 
+      ]
     },
     {
       "type": "mixed",
@@ -108,7 +118,13 @@
       { "rule_set": ["geoip-netflix", "geosite-netflix"], "outbound": "🎥 Netflix" },
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "📲 Telegram" },
       { "rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择" },
-      { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" }
+      { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" },
+      { "source": ["192.168.10.151/32", "192.168.10.174/32", "192.168.10.172/32"], "outbound": "🚀 节点选择" },
+      { "source_ip_cidr": [
+        "10.0.0.0/8",      
+        "172.16.0.0/12",   
+        "192.168.0.0/16"   
+      ], "outbound": "🎯 全球直连" }
     ],
     
     "rule_set": [

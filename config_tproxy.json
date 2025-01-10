@@ -83,13 +83,15 @@
     { "tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "🎯 全球直连", "type": "direct" },
-    { "tag": "dns-out", "type": "dns" }
+    { "tag": "dns-out", "type": "dns" },
+    { "tag": "bypass", "type": "direct", "routing_mark": 2 }
   ],
   
   "route": {
         "auto_detect_interface": true,
         "final": "🐠 漏网之鱼",
     "rules": [
+      { "source_ip_cidr": ["192.168.0.0/16"], "outbound": "bypass" },
       { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连" },
       { "domain_suffix": ["razord.top", "metacubex.one", "haishan.me", "metacubex.one","linux.do"], "outbound": "🎯 全球直连" },
@@ -110,8 +112,7 @@
         "192.168.10.151/32",
         "192.168.10.174/32",
         "192.168.10.172/32"
-      ], "outbound": "🚀 节点选择" },
-      { "source_ip_cidr": ["192.168.0.0/16"], "outbound": "🎯 全球直连" }
+      ], "outbound": "🚀 节点选择" }
     ],
     
     "rule_set": [

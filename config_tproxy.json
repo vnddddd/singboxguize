@@ -91,16 +91,7 @@
         "final": "🐠 漏网之鱼",
     "rules": [
       { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
-      { "source_ip_cidr": [
-        "192.168.10.151/32",
-        "192.168.10.174/32",
-        "192.168.10.172/32"
-      ], "outbound": "🚀 节点选择" },
-      { "source_ip_cidr": ["192.168.0.0/16"], "outbound": "🎯 全球直连" },
-      { "clash_mode": "direct", "outbound": "🎯 全球直连" },
-      { "clash_mode": "global", "outbound": "GLOBAL" },
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连" },
-      { "domain_suffix": ["razord.top", "metacubex.one", "haishan.me", "metacubex.one","linux.do"], "outbound": "🎯 全球直连" },
       { "rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连" },
       { "rule_set": "geosite-chat", "outbound": "🤖 OpenAI" },
       { "rule_set": "geosite-github", "outbound": "👨‍💻 Github" },
@@ -113,7 +104,13 @@
       { "rule_set": ["geoip-netflix", "geosite-netflix"], "outbound": "🎥 Netflix" },
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "📲 Telegram" },
       { "rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择" },
-      { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" }
+      { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" },
+      { "source_ip_cidr": [
+        "192.168.10.151/32",
+        "192.168.10.174/32",
+        "192.168.10.172/32"
+      ], "outbound": "🚀 节点选择" },
+      { "source_ip_cidr": ["192.168.0.0/16"], "outbound": "🎯 全球直连" }
     ],
     
     "rule_set": [

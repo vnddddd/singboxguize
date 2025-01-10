@@ -51,7 +51,12 @@
       "listen": "0.0.0.0",
       "listen_port": 7895,
       "sniff": true,
-      "sniff_override_destination": false
+      "sniff_override_destination": false,
+      "source_ip_cidr": [
+        "192.168.10.151/32",
+        "192.168.10.174/32",
+        "192.168.10.172/32"
+      ]
     },
     {
       "type": "mixed",

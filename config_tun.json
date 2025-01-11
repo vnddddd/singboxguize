@@ -29,6 +29,11 @@
     ],
     "rules": [
       { "outbound": "any", "server": "defaultDns", "disable_cache": true },
+      { "source_ip_cidr": [
+        "192.168.10.151/32",
+        "192.168.10.174/32",
+        "192.168.10.172/32"
+      ], "server": "proxyDns" },
       { "clash_mode": "direct", "server": "localDns" },
       { "clash_mode": "global", "server": "proxyDns" },
       { "rule_set": "geosite-cn", "server": "localDns" },

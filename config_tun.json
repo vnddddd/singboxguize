@@ -34,9 +34,6 @@
         "192.168.10.174/32",
         "192.168.10.172/32"
       ], "server": "proxyDns" },
-      { "source_ip_cidr": [         
-        "192.168.0.0/16" 
-         ], "server": "localDns" },
       { "clash_mode": "direct", "server": "localDns" },
       { "clash_mode": "global", "server": "proxyDns" },
       { "rule_set": "geosite-cn", "server": "localDns" },
@@ -51,9 +48,15 @@
       "type": "tun",
       "address": "172.19.0.1/30",
       "mtu": 9000,
-      "auto_route": true,
+      "auto_route": false,
       "sniff": true,
       "stack": "system",
+      "strict_route": true,
+      "inet4_route_address": [
+        "192.168.10.151/32",
+        "192.168.10.174/32",
+        "192.168.10.172/32"
+      ],
       "platform": {
         "http_proxy": {
           "enabled": true,
@@ -116,15 +119,7 @@
       { "rule_set": ["geoip-netflix", "geosite-netflix"], "outbound": "🎥 Netflix" },
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "📲 Telegram" },
       { "rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择" },
-      { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" },
-      { "source_ip_cidr": [
-        "192.168.10.151/32",
-        "192.168.10.174/32",
-        "192.168.10.172/32"
-      ], "outbound": "🚀 节点选择" },
-      { "source_ip_cidr": [  
-        "192.168.0.0/16"   
-      ], "outbound": "🎯 全球直连" }
+      { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" }
     ],
     
     "rule_set": [

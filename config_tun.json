@@ -48,16 +48,9 @@
       "type": "tun",
       "address": "172.19.0.1/30",
       "mtu": 9000,
-      "auto_route": false,
+      "auto_route": true,
       "sniff": true,
       "stack": "system",
-      "strict_route": true,
-      "route_address": [
-        "127.0.0.1/32",
-        "192.168.10.151/32",
-        "192.168.10.174/32",
-        "192.168.10.172/32"
-      ],
       "platform": {
         "http_proxy": {
           "enabled": true,

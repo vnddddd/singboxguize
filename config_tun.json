@@ -97,7 +97,6 @@
         "final": "🐠 漏网之鱼",
     "rules": [
       { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
-      { "clash_mode": "direct", "outbound": "🎯 全球直连" },
       { "clash_mode": "global", "outbound": "GLOBAL" },
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连" },
       { "domain_suffix": ["razord.top", "metacubex.one", "haishan.me", "metacubex.one","github.store","github.site","linux.do"], "outbound": "🎯 全球直连" },
@@ -118,7 +117,8 @@
         "192.168.10.151/32",
         "192.168.10.174/32",
         "192.168.10.172/32"
-      ], "outbound": "🚀 节点选择" }
+      ], "outbound": "🚀 节点选择" },
+      { "clash_mode": "direct", "outbound": "🎯 全球直连" }
     ],
     
     "rule_set": [

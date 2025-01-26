@@ -3,7 +3,8 @@
         "clash_api": {
             "external_controller": "0.0.0.0:9090",
             "external_ui": "操作界面",
-            "external_ui_download_detour": "手动选择",
+            "external_ui_download_url": "https://github.site/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+            "external_ui_download_detour": "🚀 节点选择",
             "default_mode": "rule"
         },
         "cache_file": {

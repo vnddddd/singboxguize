@@ -30,14 +30,14 @@
       },
       {
         "tag": "localDns",
-        "address": "223.5.5.5",
+        "address": "211.138.30.66",
         "address_resolver": "defaultDns",
         "address_strategy": "ipv4_only",
         "detour": "🎯 全球直连"
       },
       {
         "tag": "defaultDns",
-        "address": "223.5.5.5",
+        "address": "211.138.30.66",
         "address_strategy": "ipv4_only",
         "detour": "🎯 全球直连"
       }

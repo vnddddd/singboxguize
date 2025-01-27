@@ -26,8 +26,7 @@
         "address": "https://dns.google/dns-query",
         "address_resolver": "defaultDns",
         "address_strategy": "ipv4_only",
-        "detour": "🚀 节点选择",
-        "client_subnet": "39.148.14.38"
+        "detour": "🚀 节点选择"
       },
       {
         "tag": "localDns",

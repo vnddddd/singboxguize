@@ -16,8 +16,7 @@
             {
                 "tag": "google",
                 "address": "https://dns.google/dns-query",
-                "address_resolver": "local",
-                "client_subnet": "39.148.14.38"
+                "address_resolver": "local"
             },
             {
                 "tag": "local",

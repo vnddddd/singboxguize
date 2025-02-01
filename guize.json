@@ -3,7 +3,7 @@
         "clash_api": {
             "external_controller": "0.0.0.0:9095",
             "external_ui": "操作界面",
-            "external_ui_download_detour": "手动选择",
+            "external_ui_download_detour": "🚀 节点选择",
             "default_mode": "rule"
         },
         "cache_file": {

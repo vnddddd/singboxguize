@@ -1,7 +1,7 @@
 {
     "experimental": {
         "clash_api": {
-            "external_controller": "0.0.0.0:9090",
+            "external_controller": "0.0.0.0:9095",
             "external_ui": "操作界面",
             "external_ui_download_detour": "手动选择",
             "default_mode": "rule"

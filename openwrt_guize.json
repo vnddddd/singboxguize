@@ -308,9 +308,11 @@
                     "github.store",
                     "github.site",
                     "deepseek.com",
+                    "metaso.cn",
                     "linux.do"
                 ],
                 "outbound": "🎯 全球直连"
+
             },
             {
                 "rule_set": "geosite-chat",

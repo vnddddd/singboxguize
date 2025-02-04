@@ -312,10 +312,12 @@
                     "github.store",
                     "github.site",
                     "deepseek.com",
-                    "linux.do"
+                    "linux.do",
+                    "metaso.cn"
                 ],
                 "outbound": "🎯 全球直连"
             },
+
             {
                 "rule_set": "geosite-chat",
                 "outbound": "🤖 OpenAI"

@@ -265,13 +265,6 @@
             "tolerance": 50
         },
         {
-            "tag": "GLOBAL",
-            "type": "selector",
-            "outbounds": [
-                "{all}"
-            ]
-        },
-        {
             "type": "direct",
             "tag": "🎯 全球直连"
         }

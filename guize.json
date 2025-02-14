@@ -43,6 +43,10 @@
             ],
             "auto_route": true,
             "strict_route": false
+        },
+        {
+            "type": "mixed",
+            "listen_port": 7890
         }
     ],
     "outbounds": [

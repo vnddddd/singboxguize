@@ -76,18 +76,7 @@
             "type": "selector",
             "tag": "🏠 家宽节点",
             "interrupt_exist_connections": true,
-            "outbounds": [
-                "{all}",
-                "🎯 全球直连"
-            ],
-            "filter": [
-                {
-                    "action": "include",
-                    "keywords": [
-                        "落地|家宽"
-                    ]
-                }
-            ]
+            "outbounds": []
         },
         {
             "tag": "🇯🇵 日本节点",
@@ -260,17 +249,7 @@
         {
             "tag": "🐸 手动切换",
             "type": "selector",
-            "outbounds": [
-                "{all}"
-            ],
-            "filter": [
-                {
-                    "action": "exclude",
-                    "keywords": [
-                        "🏠|家宽|家宽节点|落地"
-                    ]
-                }
-            ]
+            "outbounds": []
         },
         {
             "tag": "♻️ 自动选择",

@@ -14,7 +14,7 @@
         "servers": [
             {
                 "tag": "google",
-                "address": "https://doh.cmliussss.net/CMLiussss",
+                "address": "https://doh.090227.xyz/CMLiussss",
                 "address_resolver": "local"
             },
             {
@@ -303,6 +303,7 @@
                     "github.store",
                     "github.site",
                     "deepseek.com",
+                    "api.siliconflow.cn",
                     "linux.do",
                     "metaso.cn"
                 ],

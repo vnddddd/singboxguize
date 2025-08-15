@@ -14,7 +14,7 @@
         "servers": [
             {
                 "tag": "google",
-                "address": "https://doh.cmliussss.net/CMLiussss",
+                "address": "https://doh.090227.xyz/CMLiussss",
                 "address_resolver": "local"
             },
             {
@@ -481,3 +481,4 @@
         "auto_detect_interface": true
     }
 }
+

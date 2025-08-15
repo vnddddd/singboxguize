@@ -14,25 +14,27 @@
         "servers": [
             {
                 "tag": "google",
-                "address": "https://doh.090227.xyz/CMLiussss",
-                "address_resolver": "local"
+                "type": "https",
+                "server": "dns.alidns.com",
+                "domain_resolver": "local"
             },
             {
                 "tag": "local",
-                "address": "211.138.30.66",
-                "detour": "🎯 全球直连"
+                "type": "udp",
+                "server": "211.138.30.66"
             }
         ],
         "rules": [
             {
-                "outbound": "any",
-                "server": "local"
-            },
-            {
-                "rule_set": "geosite-geolocation-cn",
+                "rule_set": [
+                    "geoip-cn",
+                    "geosite-steamcn",
+                    "geosite-apple"
+                ],
                 "server": "local"
             }
-        ]
+        ],
+        "final": "google"
     },
     "inbounds": [
         {
@@ -56,10 +58,82 @@
             "outbounds": [
                 "🇭🇰 香港节点",
                 "🇯🇵 日本节点",
+                "🏠 家宽节点",
                 "🇺🇲 美国节点",
                 "🐸 手动切换",
                 "♻️ 自动选择",
                 "🎯 全球直连"
+            ]
+        },
+        {
+            "tag": "🇭🇰 香港节点",
+            "type": "selector",
+            "outbounds": [
+                "{all}",
+                "🎯 全球直连"
+            ],
+            "filter": [
+                {
+                    "action": "include",
+                    "keywords": [
+                        "🇭🇰|HK|hk|香港|港|HongKong"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "selector",
+            "tag": "🏠 家宽节点",
+            "interrupt_exist_connections": true,
+            "outbounds": [
+                "{all}",
+                "🎯 全球直连"
+            ],
+            "filter": [
+                {
+                    "action": "include",
+                    "keywords": [
+                        "落地|家宽"
+                    ]
+                }
+            ]
+        },
+                {
+            "tag": "🇯🇵 日本节点",
+            "type": "selector",
+            "outbounds": [
+                "{all}",
+                "🎯 全球直连"
+            ],
+            "filter": [
+                {
+                    "action": "include",
+                    "keywords": [
+                        "🇯🇵|JP|jp|日本|日|Japan"
+                    ]
+                }
+            ]
+        },
+        {
+            "tag": "🇺🇲 美国节点",
+            "type": "selector",
+            "outbounds": [
+                "{all}",
+                "🎯 全球直连"
+            ],
+            "filter": [
+                {
+                    "action": "include",
+                    "keywords": [
+                        "🇺🇸|US|us|美国|美|United States"
+                    ]
+                },
+                {
+                    "action": "exclude",
+                    "keywords": [
+                        "香港|港|HK|hk|HongKong"
+                    ]
+                }
             ]
         },
         {
@@ -80,6 +154,7 @@
             "outbounds": [
                 "🚀 节点选择",
                 "♻️ 自动选择",
+                "🏠 家宽节点",
                 "🇭🇰 香港节点",
                 "🇯🇵 日本节点",
                 "🇺🇲 美国节点",
@@ -141,6 +216,7 @@
             "outbounds": [
                 "🚀 节点选择",
                 "♻️ 自动选择",
+                "🏠 家宽节点",
                 "🇭🇰 香港节点",
                 "🇯🇵 日本节点",
                 "🇺🇲 美国节点",
@@ -153,6 +229,7 @@
             "outbounds": [
                 "🚀 节点选择",
                 "♻️ 自动选择",
+                "🏠 家宽节点",
                 "🇭🇰 香港节点",
                 "🇯🇵 日本节点",
                 "🇺🇲 美国节点",
@@ -192,63 +269,17 @@
         {
             "tag": "🐸 手动切换",
             "type": "selector",
-            "outbounds": [
-                "{all}"
-            ]
-        },
-        {
-            "tag": "🇭🇰 香港节点",
-            "type": "selector",
-            "outbounds": [
-                "{all}",
-                "🎯 全球直连"
-            ],
-            "filter": [
-                {
-                    "action": "include",
-                    "keywords": [
-                        "🇭🇰|HK|hk|香港|港|HongKong"
-                    ]
-                }
-            ]
-        },
-        {
-            "tag": "🇯🇵 日本节点",
-            "type": "selector",
-            "outbounds": [
-                "{all}",
-                "🎯 全球直连"
-            ],
-            "filter": [
-                {
-                    "action": "include",
-                    "keywords": [
-                        "🇯🇵|JP|jp|日本|日|Japan"
-                    ]
-                }
-            ]
-        },
-        {
-            "tag": "🇺🇲 美国节点",
-            "type": "selector",
-            "outbounds": [
-                "{all}",
-                "🎯 全球直连"
-            ],
-            "filter": [
-                {
-                    "action": "include",
-                    "keywords": [
-                        "🇺🇸|US|us|美国|美|United States"
-                    ]
-                },
-                {
-                    "action": "exclude",
-                    "keywords": [
-                        "香港|港|HK|hk|HongKong"
-                    ]
-                }
-            ]
+                "outbounds": [
+                    "{all}"
+                ],
+                "filter": [
+                    {
+                        "action": "exclude",
+                        "keywords": [
+                            "🏠|家宽|家宽节点|落地"
+                        ]
+                    }
+                ]
         },
         {
             "tag": "♻️ 自动选择",
@@ -269,12 +300,29 @@
             "tolerance": 50
         },
         {
+            "tag": "🎮 Steam",
+            "type": "selector",
+            "outbounds": [
+                "🇭🇰 香港手动",
+                "🇯🇵 日本手动",
+                "🇸🇬 狮城手动",
+                "🇺🇲 美国手动",
+                "🐸 手动选择"
+            ]
+        },
+        {
+            "tag": "GLOBAL",
+            "type": "selector",
+            "outbounds": [
+                "{all}"
+            ]
+        },
+        {
             "type": "direct",
             "tag": "🎯 全球直连"
         }
     ],
     "route": {
-        "final": "🐠 漏网之鱼",
         "rules": [
             {
                 "action": "sniff"
@@ -292,6 +340,7 @@
                     "clash.razord.top",
                     "yacd.metacubex.one",
                     "yacd.haishan.me",
+                    "api.siliconflow.cn",
                     "d.metacubex.one"
                 ],
                 "outbound": "🎯 全球直连"
@@ -305,7 +354,6 @@
                     "github.store",
                     "github.site",
                     "deepseek.com",
-                    "linux.do",
                     "metaso.cn"
                 ],
                 "outbound": "🎯 全球直连"
@@ -367,6 +415,14 @@
                 "outbound": "🚀 节点选择"
             },
             {
+                "rule_set": "geosite-steam",
+                "outbound": "🎮 Steam"
+            },
+            {
+                "rule_set": "geosite-steamcn",
+                "outbound": "🎯 全球直连"
+            },
+            {
                 "rule_set": [
                     "geoip-cn",
                     "geosite-geolocation-cn"
@@ -376,109 +432,125 @@
         ],
         "rule_set": [
             {
-              "type": "remote",
-              "tag": "geosite-geolocation-cn",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+                "type": "remote",
+                "tag": "geosite-geolocation-cn",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
             },
             {
-              "type": "remote",
-              "tag": "geoip-cn",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+                "type": "remote",
+                "tag": "geoip-cn",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
             },
             {
-              "tag": "geosite-chat",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-chat-!cn.srs"
+                "tag": "geosite-steamcn",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam@cn.srs"
             },
             {
-              "tag": "geosite-youtube",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs"
+                "tag": "geosite-steam",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam.srs"
             },
             {
-              "tag": "geosite-google",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs"
+                "tag": "geosite-chat",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-chat-!cn.srs"
             },
             {
-              "tag": "geosite-github",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs"
+                "tag": "geosite-youtube",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs"
             },
             {
-              "tag": "geosite-telegram",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs"
+                "tag": "geosite-google",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs"
             },
             {
-              "tag": "geosite-tiktok",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs"
+                "tag": "geosite-github",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs"
             },
             {
-              "tag": "geosite-netflix",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs"
+                "tag": "geosite-telegram",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs"
             },
             {
-              "tag": "geosite-apple",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs"
+                "tag": "geosite-tiktok",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs"
             },
             {
-              "tag": "geosite-microsoft",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs"
+                "tag": "geosite-netflix",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs"
             },
             {
-              "tag": "geosite-onedrive",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/onedrive.srs"
+                "tag": "geosite-apple",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs"
             },
             {
-              "tag": "geosite-geolocation-!cn",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs"
+                "tag": "geosite-microsoft",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs"
             },
             {
-              "tag": "geoip-google",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs"
+                "tag": "geosite-onedrive",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/onedrive.srs"
             },
             {
-              "tag": "geoip-telegram",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"
+                "tag": "geosite-geolocation-!cn",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs"
             },
             {
-              "tag": "geoip-netflix",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs"
+                "tag": "geoip-google",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs"
             },
             {
-              "tag": "geoip-apple",
-              "type": "remote",
-              "format": "binary",
-              "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs"
+                "tag": "geoip-telegram",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"
+            },
+            {
+                "tag": "geoip-netflix",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs"
+            },
+            {
+                "tag": "geoip-apple",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs"
             }
-          ],
-        "auto_detect_interface": true
+        ],
+        "final": "🐠 漏网之鱼",
+        "auto_detect_interface": true,
+        "default_domain_resolver": {
+            "server": "google"
+        }
     }
 }
 

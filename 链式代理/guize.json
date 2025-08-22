@@ -15,26 +15,49 @@
             {
                 "tag": "google",
                 "type": "https",
-                "server": "dns.alidns.com",
-                "domain_resolver": "local"
+                "server": "1.1.1.1"
             },
             {
                 "tag": "local",
                 "type": "udp",
                 "server": "211.138.30.66"
+            },
+            {
+                "tag": "remote",
+                "type": "fakeip",
+                "inet4_range": "198.18.0.0/15",
+                "inet6_range": "fc00::/18"
             }
         ],
         "rules": [
             {
-                "rule_set": [
-                    "geoip-cn",
-                    "geosite-steamcn",
-                    "geosite-apple"
-                ],
+                "rule_set": "geosite-geolocation-cn",
                 "server": "local"
+            },
+            {
+                "type": "logical",
+                "mode": "and",
+                "rules": [
+                    {
+                        "rule_set": "geosite-geolocation-!cn",
+                        "invert": true
+                    },
+                    {
+                        "rule_set": "geoip-cn"
+                    }
+                ],
+                "server": "google",
+                "client_subnet": "211.138.30.66/24"
+            },
+            {
+                "query_type": [
+                    "A",
+                    "AAAA"
+                ],
+                "server": "remote"
             }
         ],
-        "final": "google"
+        "independent_cache": true
     },
     "inbounds": [
         {
@@ -43,12 +66,12 @@
                 "172.19.0.1/30",
                 "fdfe:dcba:9876::1/126"
             ],
+            "loopback_address": [
+                "10.7.0.1"
+            ],
             "auto_route": true,
-            "strict_route": false
-        },
-        {
-            "type": "mixed",
-            "listen_port": 7890
+            "strict_route": true,
+            "stack": "system"
         }
     ],
     "outbounds": [
@@ -231,7 +254,7 @@
                 "🐸 手动切换"
             ]
         },
-                {
+        {
             "tag": "♻️ 自动选择",
             "type": "urltest",
             "outbounds": [],
@@ -245,16 +268,61 @@
         }
     ],
     "route": {
+        "default_domain_resolver": "local",
         "rules": [
             {
                 "action": "sniff"
             },
             {
-                "protocol": "dns",
+                "type": "logical",
+                "mode": "or",
+                "rules": [
+                    {
+                        "protocol": "dns"
+                    },
+                    {
+                        "port": 53
+                    }
+                ],
                 "action": "hijack-dns"
             },
             {
                 "ip_is_private": true,
+                "outbound": "🎯 全球直连"
+            },
+            {
+                "type": "logical",
+                "mode": "or",
+                "rules": [
+                    {
+                        "port": 853
+                    },
+                    {
+                        "network": "udp",
+                        "port": 443
+                    },
+                    {
+                        "protocol": "stun"
+                    }
+                ],
+                "action": "reject"
+            },
+            {
+                "rule_set": "geosite-geolocation-cn",
+                "outbound": "🎯 全球直连"
+            },
+            {
+                "type": "logical",
+                "mode": "and",
+                "rules": [
+                    {
+                        "rule_set": "geoip-cn"
+                    },
+                    {
+                        "rule_set": "geosite-geolocation-!cn",
+                        "invert": true
+                    }
+                ],
                 "outbound": "🎯 全球直连"
             },
             {
@@ -342,13 +410,6 @@
             },
             {
                 "rule_set": "geosite-steamcn",
-                "outbound": "🎯 全球直连"
-            },
-            {
-                "rule_set": [
-                    "geoip-cn",
-                    "geosite-geolocation-cn"
-                ],
                 "outbound": "🎯 全球直连"
             }
         ],
@@ -469,10 +530,6 @@
             }
         ],
         "final": "🐠 漏网之鱼",
-        "auto_detect_interface": true,
-        "default_domain_resolver": {
-            "server": "google"
-        }
+        "auto_detect_interface": true
     }
 }
-

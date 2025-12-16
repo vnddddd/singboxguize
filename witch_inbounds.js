@@ -28,3 +28,4 @@ function operator(content, targetPlatform, context) {
   cfg.inbounds = mode === "mobile" ? MOBILE_INBOUNDS : PC_INBOUNDS;
   return JSON.stringify(cfg, null, 2);
 }
+console.log(Object.keys(context || {}))

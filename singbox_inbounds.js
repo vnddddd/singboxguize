@@ -1,7 +1,5 @@
 // 远程脚本：替换 sing-box 顶层 inbounds
-// 远程参数：#mode=mobile 或 #mode=pc  → 通过 $options.mode 读取 [web:220]
-
-const mode = String($options?.mode ?? "pc").toLowerCase();
+const mode = String(($arguments?.mode ?? $options?.mode ?? "pc")).toLowerCase();
 
 const MOBILE_INBOUNDS = [
   { type: "direct", listen: "127.0.0.1", tag: "dns-in", listen_port: 5350 },

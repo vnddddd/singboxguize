@@ -147,168 +147,168 @@
         "tag": "Apple-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Apple/Apple-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Apple/Apple-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Apple-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Apple/Apple-IP-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Apple/Apple-IP-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Bahamut-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Bahamut/Bahamut-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Bahamut/Bahamut-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Bilibili-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Bilibili/Bilibili-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Bilibili/Bilibili-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Bilibili-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Bilibili/Bilibili-IP-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Bilibili/Bilibili-IP-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "China-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/China/China-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/China/China-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "China-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/China/China-IP-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/China/China-IP-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Discord-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Discord/Discord-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Discord/Discord-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "GFWList-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/GFWList/GFWList-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/GFWList/GFWList-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Google-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Google/Google-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Google/Google-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Google-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Google/Google-IP-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Google/Google-IP-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "GoogleFCM-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/GoogleFCM/GoogleFCM-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/GoogleFCM/GoogleFCM-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Local-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Local/Local-IP-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Local/Local-IP-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Microsoft-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Microsoft/Microsoft-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Microsoft/Microsoft-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Netflix-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Netflix/Netflix-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Netflix/Netflix-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Netflix-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Netflix/Netflix-IP-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Netflix/Netflix-IP-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "OpenAI-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/OpenAI/OpenAI-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/OpenAI/OpenAI-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "OpenAI-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/OpenAI/OpenAI-IP-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/OpenAI/OpenAI-IP-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Speedtest-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Speedtest/Speedtest-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Speedtest/Speedtest-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Spotify-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Spotify/Spotify-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Spotify/Spotify-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Spotify-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Spotify/Spotify-IP-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Spotify/Spotify-IP-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Steam-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Steam/Steam-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Steam/Steam-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Telegram-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Telegram/Telegram-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Telegram/Telegram-Site-V3.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "Telegram-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/Telegram/Telegram-IP-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/Telegram/Telegram-IP-V3.srs",
         "download_detour": "Direct"
       },
       {
@@ -322,7 +322,7 @@
         "tag": "TikTok-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.1/sing-box/TikTok/TikTok-Site-V3.srs",
+        "url": "https://cdn.jsdmirror.com/gh/HosheaPDNX/rule-set@V2.0.2/sing-box/TikTok/TikTok-Site-V3.srs",
         "download_detour": "Direct"
       }
     ],
@@ -962,4 +962,5 @@
     }
   }
 }
+
 

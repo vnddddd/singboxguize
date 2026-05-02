@@ -90,7 +90,9 @@
           "ntp.aliyun.com",
           "jsdmirror.cn",
           "jsdmirror.com",
-          "fastly.jsdelivr.net"
+          "fastly.jsdelivr.net",
+          "windhub.cc"
+          
         ],
         "action": "route",
         "strategy": "ipv4_only",
@@ -384,7 +386,8 @@
       },
       {
         "domain": [
-          "ntp.aliyun.com"
+          "ntp.aliyun.com",
+          "windhub.cc"
         ],
         "action": "route",
         "outbound": "Direct"

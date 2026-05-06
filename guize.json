@@ -91,7 +91,8 @@
           "jsdmirror.cn",
           "jsdmirror.com",
           "fastly.jsdelivr.net",
-          "windhub.cc"
+          "windhub.cc",
+          "api.42w.shop"
           
         ],
         "action": "route",
@@ -387,7 +388,8 @@
       {
         "domain": [
           "ntp.aliyun.com",
-          "windhub.cc"
+          "windhub.cc",
+          "api.42w.shop"
         ],
         "action": "route",
         "outbound": "Direct"

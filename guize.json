@@ -99,6 +99,14 @@
         "strategy": "ipv4_only",
         "server": "DNS-DIRECT"
       },
+            {
+        "domain_keyword": [
+          "cloudstudio.club"
+        ],
+        "action": "route",
+        "strategy": "ipv4_only",
+        "server": "DNS-DIRECT"
+      },
       {
         "domain_keyword": [
           "msftconnecttest.com",
@@ -390,6 +398,13 @@
           "ntp.aliyun.com",
           "test-fast.windhub.cc",
           "api.42w.shop"
+        ],
+        "action": "route",
+        "outbound": "Direct"
+      },
+            {
+        "domain_keyword": [
+          "ap-shanghai2.cloudstudio.club"
         ],
         "action": "route",
         "outbound": "Direct"

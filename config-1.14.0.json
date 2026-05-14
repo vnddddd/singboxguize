@@ -513,10 +513,7 @@
       },
        {
         "domain_suffix": [
-          "ntp.aliyun.com",
-          "cloudstudio.club",
-          "test-fast.windhub.cc",
-          "api.42w.shop"
+          "cloudstudio.club"
         ],
         "action": "route",
         "outbound": "Direct"

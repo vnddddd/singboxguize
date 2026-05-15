@@ -98,7 +98,6 @@
       },
       {
         "rule_set": "geosite-youtube",
-        "strategy": "ipv4_only",
         "server": "DNS-YOUTUBE"
       },
       {
